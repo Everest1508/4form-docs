@@ -1,0 +1,61 @@
+---
+title: Form Settings
+description: Guide to configuring and managing form fields, notifications, and email settings in 4Form.
+---
+
+# Form Settings
+
+This page is used to configure and manage all settings related to a form, including the fields, notifications, email settings, and integration options.
+
+1. **What types of fields can I see here?**
+
+   You can see existing fields such as:
+   - Text Field (text, required)
+   - Email Address (email, required)
+   - Message (textarea, not required unless specified)
+
+2. **How can I add a new field?**
+
+   Click the “+ Add Field” button to create a new form field (like dropdown, checkbox, etc., depending on your options).
+
+3. **How can I edit an existing field?**
+
+   Click the pencil icon 🖉 next to the field to edit its label, placeholder, type, or required status.
+
+4. **How can I remove a field?**
+
+   Click the trash icon 🗑️ to delete the field from the form.
+
+---
+
+# Notification
+
+On this page, you can create email notifications to alert users when a form is submitted. To access this page, go to the “Notifications” tab inside the Form Settings panel.
+
+1. **How do I notify the administrator?**
+
+   - Tick the “Notify Administrator” checkbox.
+   - Enter the email address in the “Admin Email Address” field where you want to receive form submissions.
+
+2. **Can I notify the person who submitted the form?**
+
+   Yes, enable the “Notify Form Submitter” checkbox to send them a confirmation email.
+
+3. **What is the “Email Subject” field?**
+
+   This sets the subject line of the email you will receive when someone submits the form.
+
+4. **What can I write in the “Email Body”?**
+
+   You can customize the message that appears in the email. You can also use template variables like:
+   - {{ form_name }} – Form’s name
+   - {{ submitted_data_text }} – All submitted data
+   - {{ submitted_at }} – Submission date/time
+   You can also show individual field values like:
+   - {{ submitted_data.text-field }}
+   - {{ submitted_data.email-address }}
+   - {{ submitted_data.message }}
+
+5. **What does the “Create Notification” button do?**
+
+   It saves your notification settings and starts sending emails based on the configuration. 

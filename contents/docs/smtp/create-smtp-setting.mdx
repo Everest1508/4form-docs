@@ -1,0 +1,68 @@
+---
+title: Create SMTP Setting
+description: Guide to setting up and managing SMTP server settings in 4Form.
+---
+
+# Create SMTP Setting
+
+1. **What is the main purpose of this page?**
+
+   This page lets you set up and manage SMTP (Simple Mail Transfer Protocol) server settings, which are required to send emails (such as notifications and alerts) directly from your system or application using your preferred email provider.
+
+2. **What are the main features available on the SMTP Configuration page?**
+
+   - Quick Setup Templates: Choose from popular email service providers (such as Gmail, Outlook, Yahoo, SendGrid, Mailgun, and Zoho) to auto-fill standard SMTP settings.
+   - Popular Email Providers Reference: A table with SMTP host addresses and ports for common free and business email providers, making manual setup easier.
+   - Add/Edit SMTP Setting: A customizable form to enter all required SMTP details, including basic info, server configuration, authentication, and security options.
+   - Security Options: Selection of encryption methods like TLS/STARTTLS or SSL for secure email transmissions.
+   - Save Settings: Button to save your SMTP configuration.
+   - Test Connection: Option to test the connection and validate the SMTP details before using them for sending emails.
+
+3. **What fields are available for configuring a new SMTP setting?**
+
+   | Field               | Description                                                                 |
+   |---------------------|-----------------------------------------------------------------------------|
+   | Configuration Name  | Provide a descriptive name so you can identify this SMTP profile for future reference. |
+   | SMTP Host           | The address of your email provider’s SMTP server (e.g., smtp.gmail.com).    |
+   | SMTP Port           | The port for connecting to the server (587 for TLS, 465 for SSL, 25 for plain). |
+   | Username            | The email address or username required to log in to the SMTP server.        |
+   | Password            | The password or app-specific password for SMTP authentication.              |
+   | Encryption Method   | The security protocol for sending emails (TLS/STARTTLS recommended for most providers). |
+
+4. **What are Quick Setup Templates and how do they help?**
+
+   Quick Setup Templates are one-click options for the most common providers (like Gmail, Outlook, Yahoo, etc.). When you select a provider, the system will automatically populate the SMTP host and port fields with the recommended values, simplifying the process and reducing errors.
+
+5. **How do I manually enter SMTP details?**
+
+   Fill in each field as per your provider’s instructions (using the reference table provided), enter your credentials, choose an encryption method, and then save the configuration.
+
+6. **Is my password secure on this page?**
+
+   Passwords are entered in a masked format. For additional security, many providers require you to use app-specific passwords (especially Gmail, Yahoo, etc.) instead of your actual account password.
+
+7. **What does the 'Test Connection' button do?**
+
+   It attempts to connect to your SMTP server with the provided settings, allowing you to verify credentials and connectivity before relying on them for actual email sending. If there’s an error (such as a wrong password or server address), it will alert you.
+
+8. **Can I use both free and business email services?**
+
+   Yes. You can configure SMTP using free email providers (e.g., Gmail, Outlook, Yahoo), or business-grade services (like SendGrid, Zoho, Mailgun, Amazon SES, Postmark). The reference table supplies the standard SMTP settings for each provider.
+
+9. **What security methods are available?**
+
+   - TLS/STARTTLS: Recommended for most providers for secure email transmission.
+   - SSL: Can also be used if supported by your mail server.
+   - None: Not recommended, as emails could be sent unencrypted over the internet.
+
+10. **What should I do if my provider requires an app-specific password?**
+
+    Follow your email service provider’s instructions to generate an app-specific password and use that in place of your regular email password for SMTP authentication. This is a common security requirement for providers like Gmail and Yahoo.
+
+11. **Am I able to integrate multiple SMTP servers?**
+
+    You can create and save separate configurations for different email providers or purposes, choosing the most appropriate one as needed. This is useful if you have multiple forms, departments, or notification channels that require different email accounts.
+
+12. **What happens after I save my SMTP settings?**
+
+    The configuration is saved for use by your system. You can send test emails to confirm delivery and make changes at any time if you need to switch providers or update credentials. 

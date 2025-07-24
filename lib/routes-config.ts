@@ -18,12 +18,13 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
-    title: "Server Actions",
-    href: "/server-actions",
+    title: "Forms",
+    href: "/forms",
     noLink: true,
     items: [
-      { title: "getSession", href: "/getSession" },
-      { title: "getToken", href: "/getToken" },
+      { title: "Forms Overview", href: "/forms-overview" },
+      { title: "Form Settings", href: "/form-settings" },
+      { title: "Export Multiple Forms", href: "/export-multiple-forms" },
     ],
   },
   {
@@ -31,7 +32,41 @@ export const ROUTES: EachRoute[] = [
     href: "/integration",
     noLink: true,
     items: [
-      { title: "HTML", href: "/html" },
+      { title: "Integration", href: "/integration" },
+    ],
+  },
+  {
+    title: "Responses",
+    href: "/responses",
+    noLink: true,
+    items: [
+      { title: "Responses", href: "/responses" },
+    ],
+  },
+  {
+    title: "SMTP",
+    href: "/smtp",
+    noLink: true,
+    items: [
+      { title: "SMTP Settings", href: "/smtp-settings" },
+      { title: "Create SMTP Setting", href: "/create-smtp-setting" },
+    ],
+  },
+  {
+    title: "Notifications",
+    href: "/notifications",
+    noLink: true,
+    items: [
+      { title: "Notifications", href: "/notifications" },
+    ],
+  },
+  {
+    title: "Server Actions",
+    href: "/server-actions",
+    noLink: true,
+    items: [
+      { title: "getSession", href: "/getSession" },
+      { title: "getToken", href: "/getToken" },
     ],
   },
 ];
