@@ -1,13 +1,8 @@
-// for page navigation & to sort on leftbar
+const fs = require('fs');
+const path = require('path');
 
-export type EachRoute = {
-  title: string;
-  href: string;
-  noLink?: true;
-  items?: EachRoute[];
-};
-
-export const ROUTES: EachRoute[] = [
+// Manually extract routes from the config
+const ROUTES = [
   {
     title: "Getting Started",
     href: "/getting-started",
@@ -59,13 +54,20 @@ export const ROUTES: EachRoute[] = [
     items: [
       { title: "Notifications", href: "/notifications" },
     ],
-  }
+  },
+  {
+    title: "Server Actions",
+    href: "/server-actions",
+    noLink: true,
+    items: [
+      { title: "getSession", href: "/getSession" },
+      { title: "getToken", href: "/getToken" },
+    ],
+  },
 ];
 
-type Page = { title: string; href: string };
-
-function getRecurrsiveAllLinks(node: EachRoute) {
-  const ans: Page[] = [];
+function getRecurrsiveAllLinks(node) {
+  const ans = [];
   if (!node.noLink) {
     ans.push({ title: node.title, href: node.href });
   }
@@ -76,4 +78,11 @@ function getRecurrsiveAllLinks(node: EachRoute) {
   return ans;
 }
 
-export const page_routes = ROUTES.map((it) => getRecurrsiveAllLinks(it)).flat();
+const page_routes = ROUTES.map((it) => getRecurrsiveAllLinks(it)).flat();
+
+console.log('Expected routes and their file paths:');
+page_routes.forEach(route => {
+  const filePath = `contents/docs${route.href}/index.mdx`;
+  const exists = fs.existsSync(filePath);
+  console.log(`${route.href} -> ${filePath} [${exists ? 'EXISTS' : 'MISSING'}]`);
+});

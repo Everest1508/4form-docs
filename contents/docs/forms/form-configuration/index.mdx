@@ -1,0 +1,199 @@
+---
+title: Form Configuration
+description: Complete guide to configuring form fields, notifications, and advanced settings in 4Form.
+---
+
+# Form Configuration
+
+The Form Configuration section allows you to customize every aspect of your forms, from field management to notification settings. This comprehensive interface gives you full control over how your forms behave and interact with users.
+
+## Field Management
+
+### Adding Form Fields
+Create new form fields to collect the data you need:
+
+**Available Field Types:**
+- **Text Field**: Single-line text input for names, titles, etc.
+- **Email Field**: Email address input with built-in validation
+- **Textarea**: Multi-line text input for messages and descriptions
+- **Dropdown**: Select from predefined options
+- **Checkbox**: Multiple choice selections
+- **Radio Buttons**: Single choice from multiple options
+- **File Upload**: Allow users to attach files
+- **Date Picker**: Date selection input
+- **Number Field**: Numeric input with validation
+
+**Adding Fields:**
+1. Click the **"+ Add Field"** button
+2. Select the field type from the dropdown
+3. Configure field properties:
+   - **Label**: Display name for the field
+   - **Placeholder**: Helper text shown in empty fields
+   - **Required**: Make field mandatory for submission
+   - **Validation Rules**: Set specific requirements
+
+### Editing Existing Fields
+Modify any field in your form using the edit controls:
+
+**Edit Options:**
+- **Field Label**: Change the display name
+- **Placeholder Text**: Update helper text
+- **Field Type**: Convert between compatible field types
+- **Required Status**: Toggle mandatory/optional
+- **Validation Rules**: Add or modify validation
+- **Default Values**: Set pre-filled content
+
+**How to Edit:**
+1. Click the pencil icon (✏️) next to any field
+2. Modify the desired properties
+3. Save changes to update the form
+
+### Removing Fields
+Clean up your form by removing unnecessary fields:
+
+**Removal Process:**
+1. Click the trash icon (🗑️) next to the field
+2. Confirm deletion in the popup dialog
+3. Field and all associated data will be removed
+
+> **Warning**: Removing a field will permanently delete all data collected for that field from existing responses.
+
+## Field Configuration Options
+
+### Validation Settings
+Set up validation rules to ensure data quality:
+
+**Text Field Validation:**
+- **Minimum Length**: Require minimum character count
+- **Maximum Length**: Limit character count
+- **Pattern Matching**: Use regex for specific formats
+- **Custom Messages**: Personalized error messages
+
+**Email Validation:**
+- **Format Checking**: Automatic email format validation
+- **Domain Restrictions**: Allow/block specific domains
+- **Duplicate Prevention**: Prevent multiple submissions from same email
+
+**Number Field Validation:**
+- **Range Limits**: Set minimum and maximum values
+- **Decimal Places**: Control precision
+- **Step Values**: Define increment/decrement amounts
+
+### Display Options
+Customize how fields appear to users:
+
+**Layout Settings:**
+- **Field Width**: Full width, half width, or custom
+- **Field Order**: Drag and drop to reorder
+- **Grouping**: Organize related fields together
+- **Conditional Logic**: Show/hide fields based on other inputs
+
+## Notification Configuration
+
+### Email Notifications
+Set up automated email alerts for form submissions:
+
+### Administrator Notifications
+Keep administrators informed of new submissions:
+
+**Setup Process:**
+1. Enable **"Notify Administrator"** checkbox
+2. Enter admin email address in **"Admin Email Address"** field
+3. Configure email content and timing
+
+**Admin Email Settings:**
+- **Multiple Recipients**: Add multiple admin emails separated by commas
+- **Email Subject**: Customize the subject line
+- **Email Template**: Use variables for dynamic content
+- **Delivery Timing**: Immediate or scheduled delivery
+
+### User Confirmation Emails
+Send confirmation emails to form submitters:
+
+**Configuration Options:**
+1. Enable **"Notify Form Submitter"** checkbox
+2. Customize confirmation message
+3. Include submission summary
+4. Add next steps or instructions
+
+### Email Template Variables
+Use dynamic variables in your email templates:
+
+**Form Variables:**
+- `{{ form_name }}` - Name of the submitted form
+- `{{ submitted_at }}` - Date and time of submission
+- `{{ submitted_data_text }}` - All form data as text
+- `{{ submission_id }}` - Unique identifier for the submission
+
+**Field-Specific Variables:**
+- `{{ submitted_data.field-name }}` - Value from specific field
+- `{{ submitted_data.text-field }}` - Text field content
+- `{{ submitted_data.email-address }}` - Email field value
+- `{{ submitted_data.message }}` - Textarea content
+
+**Example Email Template:**
+```
+Subject: New submission from {{ form_name }}
+
+Hello,
+
+You have received a new form submission:
+
+Form: {{ form_name }}
+Submitted: {{ submitted_at }}
+
+Details:
+{{ submitted_data_text }}
+
+Best regards,
+4Form System
+```
+
+## Advanced Configuration
+
+### Form Behavior Settings
+Control how your form behaves after submission:
+
+**Submission Actions:**
+- **Success Message**: Custom thank you message
+- **Redirect URL**: Send users to specific page after submission
+- **Download Trigger**: Automatically start file download
+- **Email Confirmation**: Send immediate confirmation
+
+### Security Settings
+Protect your forms from spam and abuse:
+
+**Protection Options:**
+- **CAPTCHA Integration**: Add human verification
+- **Rate Limiting**: Prevent rapid submissions
+- **IP Blocking**: Block specific IP addresses
+- **Honeypot Fields**: Hidden spam detection
+
+### Integration Settings
+Connect your form with external services:
+
+**Available Integrations:**
+- **Webhook URLs**: Send data to external APIs
+- **Database Connections**: Store data in custom databases
+- **CRM Integration**: Sync with customer management systems
+- **Analytics Tracking**: Monitor form performance
+
+## Best Practices
+
+### Field Organization
+- **Logical Grouping**: Group related fields together
+- **Progressive Disclosure**: Use conditional logic to show relevant fields
+- **Clear Labels**: Use descriptive, user-friendly field names
+- **Helpful Placeholders**: Provide examples of expected input
+
+### Notification Management
+- **Test Email Settings**: Always test notifications before going live
+- **Professional Templates**: Use branded email templates
+- **Timely Responses**: Set up immediate acknowledgment emails
+- **Backup Recipients**: Include multiple admin emails for reliability
+
+### Performance Optimization
+- **Minimal Fields**: Only ask for necessary information
+- **Smart Validation**: Provide real-time feedback
+- **Mobile Optimization**: Ensure forms work well on all devices
+- **Loading Speed**: Optimize for fast form rendering

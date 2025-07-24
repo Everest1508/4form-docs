@@ -1,6 +1,6 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { HexagonIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
 import { page_routes } from "@/lib/routes-config";
@@ -10,10 +10,10 @@ export const NAVLINKS = [
     title: "Documentation",
     href: `/docs${page_routes[0].href}`,
   },
-  {
-    title: "GitHub",
-    href: "https://github.com/nisabmohd/Aria-Docs/tree/minimal-docs",
-  },
+  // {
+  //   title: "GitHub",
+  //   href: "https://github.com/your-org/4form-cms",
+  // },
 ];
 
 export function Navbar() {
@@ -49,8 +49,14 @@ export function Navbar() {
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-3">
-      <HexagonIcon className="w-6 h-6 text-muted-foreground fill-current" />
-      <h2 className="text-md font-bold font-code">AriaDocsLite</h2>
+      <Image
+        src="/4form.webp"
+        alt="4Form CMS Logo"
+        width={24}
+        height={24}
+        className="w-6 h-8"
+      />
+      <h2 className="text-md font-bold font-code">4Form CMS</h2>
     </Link>
   );
 }

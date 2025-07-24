@@ -19,9 +19,9 @@ const codeFont = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AriaDocsLite - Template",
+  title: "4Form CMS Documentation",
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "Complete documentation for 4Form CMS - a powerful form builder and content management system. Learn how to create, manage, and integrate forms with ease.",
 };
 
 export default function RootLayout({

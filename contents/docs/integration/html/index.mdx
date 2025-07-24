@@ -1,42 +1,154 @@
 ---
-title: Integration
-description: Guide to integrating 4Form forms with HTML, JavaScript, Python, and cURL.
+title: HTML Integration
+description: Complete guide to integrating 4Form forms with HTML, JavaScript, Python, and cURL.
 ---
 
-# Integration
+# Form Integration
 
-1. **What can I do from the Form Integration section?**
+The Form Integration section provides you with everything needed to embed your forms into websites, applications, or backend services. 4Form supports multiple integration methods to fit your technical requirements.
 
-   From the Form Integration section, you can easily integrate your form into any website, application, or service. This page provides ready-to-use code and instructions for several popular technologies, making it simple to collect submissions directly from your own platform.
+## Integration Methods
 
-2. **Which technologies are supported for form integration?**
+4Form provides ready-to-use code snippets for the following technologies:
 
-   You can connect your form using the following methods:
-   - HTML Form
-   - JavaScript/AJAX
-   - Python Request
-   - cURL Command
+- **HTML Form**: Traditional form submission
+- **JavaScript/AJAX**: Asynchronous form submission
+- **Python Requests**: Server-side integration
+- **cURL Commands**: Command-line and script integration
 
-3. **How do I integrate the form using an HTML Form?**
+## HTML Form Integration
 
-   You’re given a complete HTML code snippet that you can place directly into your website. This lets visitors fill out and submit the form via a traditional HTML POST method, sending data straight to the provided Form Submission URL.
+### Basic HTML Implementation
+The HTML integration provides a complete form snippet that you can embed directly into any website:
 
-4. **How do I use JavaScript or AJAX to submit the form?**
+```html
+<form action="https://your-form-url.com/submit" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message"></textarea>
+  <button type="submit">Submit</button>
+</form>
+```
 
-   Step-by-step JavaScript/AJAX code is provided. You can copy this code and use it to send form data asynchronously from your website without reloading the page. This is ideal for modern web apps looking for a seamless user experience.
+**Benefits:**
+- Works on any website without JavaScript
+- Traditional form submission with page reload
+- Compatible with all browsers
+- Simple to implement
 
-5. **Can I integrate the form into Python scripts or backends?**
+## JavaScript/AJAX Integration
 
-   Yes. The integration page offers a sample Python requests code snippet. You can use it in your backend scripts or automation tools to send data to the form endpoint programmatically, enabling flexible server-side usage.
+### Asynchronous Form Submission
+For modern web applications that require seamless user experience:
 
-6. **Is there support for sending form data with cURL?**
+```javascript
+async function submitForm(formData) {
+  try {
+    const response = await fetch('https://your-form-url.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+    
+    if (response.ok) {
+      console.log('Form submitted successfully');
+    }
+  } catch (error) {
+    console.error('Submission failed:', error);
+  }
+}
+```
 
-   Absolutely! You’ll get a cURL command ready to copy and run. This is especially useful for testing or integrating form submissions within bash scripts or other command-line tools.
+**Benefits:**
+- No page reload required
+- Better user experience
+- Real-time validation possible
+- Custom success/error handling
 
-7. **Where do I find all these code samples?**
+## Python Integration
 
-   All code samples are conveniently displayed on the Form Integration page, each pre-filled with your form’s unique submission URL. You can copy any snippet to integrate the form quickly using your preferred technology.
+### Server-Side Form Submission
+Perfect for backend services, automation scripts, or data processing:
 
-8. **Why use these integration methods?**
+```python
+import requests
 
-   These technologies cover a wide range of use cases—from simple HTML websites to advanced web applications, backend services, and automation scripts. This flexibility ensures your form can collect responses wherever you need, using the stack you prefer. 
+def submit_form_data(data):
+    url = "https://your-form-url.com/submit"
+    response = requests.post(url, json=data)
+    
+    if response.status_code == 200:
+        print("Form submitted successfully")
+    else:
+        print(f"Submission failed: {response.status_code}")
+
+# Example usage
+form_data = {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "message": "Hello from Python!"
+}
+submit_form_data(form_data)
+```
+
+**Use Cases:**
+- Automated data collection
+- Backend service integration
+- Batch form submissions
+- Data migration scripts
+
+## cURL Integration
+
+### Command-Line Form Submission
+Ideal for testing, shell scripts, and automation:
+
+```bash
+curl -X POST https://your-form-url.com/submit \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "message": "Hello from cURL!"
+  }'
+```
+
+**Use Cases:**
+- API testing
+- Shell script automation
+- CI/CD pipeline integration
+- Quick form testing
+
+## Implementation Steps
+
+### 1. Get Your Form URL
+Each form has a unique submission URL that you'll find in the Integration section of your form settings.
+
+### 2. Choose Your Method
+Select the integration method that best fits your technical stack and requirements.
+
+### 3. Copy the Code
+All code snippets are pre-configured with your form's unique URL. Simply copy and paste into your project.
+
+### 4. Customize as Needed
+Modify the code to match your styling, validation requirements, and error handling preferences.
+
+### 5. Test Your Integration
+Always test your form integration before going live to ensure proper data submission.
+
+## Best Practices
+
+- **Always validate data** on both client and server side
+- **Handle errors gracefully** with user-friendly messages
+- **Test thoroughly** across different browsers and devices
+- **Use HTTPS** for secure data transmission
+- **Implement rate limiting** to prevent spam submissions
+
+## Troubleshooting
+
+### Common Issues
+- **CORS errors**: Ensure your domain is whitelisted in form settings
+- **Failed submissions**: Check network connectivity and form URL
+- **Missing data**: Verify field names match your form configuration
+- **Timeout errors**: Consider implementing retry logic for network issues
